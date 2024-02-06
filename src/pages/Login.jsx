@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { login_success, start_login } from '../constants/actionTypes'
 import axios from 'axios'
 import { LoginContext } from '../context/LoginContext'
+import Swal from 'sweetalert2'
 
 const Login = () => {
     const navigate = useNavigate()
@@ -22,14 +23,18 @@ const Login = () => {
         e.preventDefault()
         dispatch({type:start_login})
         try {
-            const res = await axios.post('auth/login', loginData)
+            const res = await axios.post('auth/admin', loginData)
             dispatch({type:login_success, payload:res.data.userDetails})
-            
+            navigate('/home')
         }catch(error) {
             console.log(error)
-            alert(2)
+            Swal.fire({
+                title: '帳號或密碼錯誤',
+                icon: 'error',
+                confirmButtonText: '重試'
+              })
         }
-        // navigate('/home')
+        // 
     }
     
     
