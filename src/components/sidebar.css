@@ -1,0 +1,13 @@
+.sidebar {
+    background-color: rgb(229, 201, 196);
+    height: calc(100vh - 48px);
+    border-top: 2px solid #fff;
+    padding: 1rem;
+}
+
+.active {
+    color: #CE7B7B;
+    padding-bottom: 0.3rem;
+    box-shadow: 0 1px;
+    display: inline;
+}
