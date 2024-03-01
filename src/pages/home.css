@@ -1,3 +1,41 @@
-.w-10 {
-    width: 10%;
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:wght@500&display=swap');
+
+.w-13 {
+    width: 13%;
+}
+
+.w-87 {
+    width: 87%;
+}
+
+.font-dance {
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  input {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .font-robo {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+.w-90 {
+  width: 90%;
+}
+
+.bcg {
+  background-color: #CE7B7B;
+}
+
+.background {
+  background-color: #a659599d;
+}
+
+.today {
+  border: 1px solid rgb(229, 201, 196);
+  border-radius: 5px;
+  width: 70%;
+  padding: 2px 0;
 }
