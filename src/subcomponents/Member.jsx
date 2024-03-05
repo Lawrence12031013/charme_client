@@ -107,14 +107,14 @@ const Member = () => {
     return (
         <>
             {editPage === true ? 
-                <div>
+                <div className='h-85 relative'>
                     <h1 className='text-xl'>編輯會員</h1>
                     {editData && ( // 检查editData是否存在
                         <div className='flex flex-col mt-2'>
                             <label htmlFor="name">姓名</label>
                             <input type="text" id='name' className='border mb-4 mt-2 w-full' value={editData.name || ''} readOnly/>
-                            <label htmlFor="password">密碼</label>
-                            <input type="text" id='password'  className='border mb-4 mt-2 w-full' value={"password"} readOnly/>
+                            {/* <label htmlFor="password">密碼</label>
+                            <input type="text" id='password'  className='border mb-4 mt-2 w-full' value={"password"} readOnly/> */}
                             <label htmlFor="phone">電話</label>
                             <input type="text" id='phone' className='border mb-4 mt-2 w-full' value={editData.phone || '' } onChange={(e) => handleInputChange(e, 'phone')} />
                             <label htmlFor="email">e-mail</label>
@@ -123,7 +123,7 @@ const Member = () => {
                             <input type="text" id='comment' className='border mb-4 mt-2 w-full' value={editData.comment || ''} onChange={(e) => handleInputChange(e, 'comment')}/>
                         </div>
                     )}
-                    <div className='flex justify-evenly items-center mt-8'>
+                    <div className='flex justify-evenly items-center mt-8 absolute bottom-0 w-full'>
                         <button className='bg-rose-600 text-white px-2 rounded' onClick={handleDelete}>刪除會員</button>
                         <button className='bcg text-white px-4 rounded' onClick={handleUpdate}>修改</button>
                         <button className='border px-4' onClick={() => setEditPage(false)}>取消</button>

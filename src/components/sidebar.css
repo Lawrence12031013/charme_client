@@ -11,3 +11,9 @@
     box-shadow: 0 1px;
     display: inline;
 }
+
+@media screen and (max-width:490px) {
+    .sidebar {
+        position: absolute;
+    }
+}

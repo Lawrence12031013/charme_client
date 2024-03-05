@@ -25,6 +25,10 @@
   width: 90%;
 }
 
+.h-85 {
+  height: 85vh;
+}
+
 .bcg {
   background-color: #CE7B7B;
 }
@@ -38,4 +42,85 @@
   border-radius: 5px;
   width: 70%;
   padding: 2px 0;
+}
+
+.showButton {
+  display: none;
+}
+
+.hideButton {
+  display: none;
+}
+
+@media screen and (max-width:490px) {
+  .hideButton {
+      width: 25px;
+      height: 2px;
+      background-color: #fff;
+      position: absolute;
+      left: 10px;
+      top: 22px;
+      z-index: 3;
+      transition: 0.5s all;
+      display: block;
+  }
+
+  .hideButton::after {
+      content: '';
+      width: 25px;
+      height: 2px;
+      background-color: #fff;
+      top: -7px;
+      display: block;
+      position: absolute;
+      /* transition: 0.5s all; */
+  }
+  
+  .hideButton::before {
+      content: '';
+      width: 25px;
+      height: 2px;
+      background-color: #fff;
+      top: 7px;
+      display: block;
+      position: absolute;
+      transition: 0.5s all;
+  }
+
+  .showButton {
+      width: 25px;
+      height: 2px;
+      background-color: #fff;
+      position: absolute;
+      left: 10px;
+      transform: rotate(45deg);
+      top: 22px;
+      z-index: 3;
+      transition: 0.5s all;
+      display: block;
+  }
+
+  .showButton::after {
+      content: '';
+      width: 25px;
+      height: 2px;
+      background-color: #fff;
+      display: block;
+      position: absolute;
+      transform: rotate(90deg);
+      transition: 0.5s all;
+      top: -0.5px;
+  }
+
+  .w-13 {
+    width: 28%;
+  }
+
+  .background {
+    width: 100%;
+    height: 100vh;
+    background-color: #ffe3e37d;
+    position: absolute;
+    filter: blur(4px);
+  }
 }

@@ -5,6 +5,7 @@ import { useCalendar, eventSelect, WEEKS, TIMES } from '../components/useCalenda
 import { format, getDate, getDay, getMonth, getTime, getYear } from 'date-fns'
 import {useNavigate} from 'react-router-dom'
 import Swal from 'sweetalert2'
+import './order.css'
 
 const Orders = () => {
 
@@ -154,13 +155,15 @@ const Orders = () => {
                   </tbody>
             </table>
             <hr />
-            <div className='flex justify-evenly px-4'>
+            <div className='flex justify-evenly'>
                 { data == null ? 
-                <div className='flex justify-center items-center h-80'>
+                <div className='flex justify-center items-center h-80 px-4'>
                     <h1 className='text-xl'>{noteDate}<span className='px-4'>今日沒有訂單</span></h1>
                 </div>
                 :
-                <div className='grid grid-rows-5 w-full'>
+                <React.Fragment >
+                  { window.innerWidth > 490 ?
+                  <div className='grid grid-rows-5 w-full px-4'>
                     <div className='grid gap-2 grid-cols-8 pt-4 text-center'>
                         <p>時間</p>
                         <p>預約人</p>
@@ -181,6 +184,35 @@ const Orders = () => {
                         </div>
                     ))}
                 </div>
+                :
+                <div className='w-full'>
+                    {data.map((item, i) => (
+                        <div className='py-2 border relative my-2 scroll' key={i}>
+                          <div className='grid grid-cols-4'>
+                            <p className='px-2'>時間：</p>
+                            <p className='px-2 col-span-3'>{item.reservationTime}</p>
+                            <p className='px-2'>預約人：</p>
+                            <p className='px-2 col-span-3'>{item.name}</p>
+                            <p className='px-2'>電話：</p>
+                            <p className='px-2 col-span-3'>{item.phone}</p>
+                            <p className='px-2 whitespace-nowrap'>預約服務：</p>
+                            <p className='px-2 col-span-3'>{item.service}</p>
+                            <p className='px-2'>回除：</p>
+                            <p className='px-2 col-span-3'>否</p>
+                            <p className='px-2'>價格</p>
+                            <p className='px-2 col-span-3'>1,600</p>
+                          </div>
+                          <div className='w-full flex justify-center'>
+                            <button className='bg-red-700 text-white rounded px-4 py-1 mt-3 mb-1' onClick={() => {handleDelete(item._id, item.reservationDate)}}>刪除訂單</button>
+                          </div>
+                        </div>
+                    ))}
+                </div>
+                }
+                
+                  
+                </React.Fragment>
+                
             }
             </div>
         </div>

@@ -1,0 +1,15 @@
+@media screen and (max-width:490px) {
+    p:before {
+        position:absolute;
+        top: 0;
+        left: 6px;
+        width: 58%;
+        padding: 10px 10px 10px 0;
+    }
+
+    .p-1 {
+        position: relative;
+    }
+
+    .p-1::before{content: '時間';}
+}

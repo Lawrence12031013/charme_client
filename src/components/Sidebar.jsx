@@ -18,10 +18,6 @@ const Sidebar = () => {
 
     const { onDataUpdate } = useMyContext();
 
-    // const sendDataToParent = () => {
-    //     const dataToSend = '資料來自子層級';
-    //     onDataUpdate(dataToSend);
-    // };
 
   return (
     <>
