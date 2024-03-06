@@ -93,7 +93,7 @@ const AllOrder = () => {
                 : 
                 <div className='mb-12'>
                     {currentData && currentData.map((item, i) => (
-                            <div className='py-2 border relative my-2 scroll' key={i}>
+                            <div className='p-2 border relative my-2 scroll' key={i}>
                                 <div className='grid grid-cols-4'>
                                     <p className='px-2'>日期：</p>
                                     <p className='px-2 col-span-3'>{item.reservationDate}</p>
@@ -108,7 +108,7 @@ const AllOrder = () => {
                                     <p className='px-2'>回除：</p>
                                     <p className='px-2 col-span-3'>是</p>
                                 </div>
-                                <div className='w-full flex justify-center'>
+                                <div className='w-full flex justify-end'>
                                     <button className='bg-red-700 text-white rounded px-4 py-1 mt-3 mb-1' onClick={() => { handleDelete(item._id) }}>刪除訂單</button>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@ const AllOrder = () => {
                 </div> 
             }
             </React.Fragment>
-            <div className='fixed bottom-4 right-10'>
+            <div className='fixed bottom-4 right-10 bg-white'>
                 {Array.from({ length: Math.ceil(filteredData.length / itemsPerPage) }, (_, index) => (
                     <React.Fragment key={index}>
                         {currentPage - 1 === index ?

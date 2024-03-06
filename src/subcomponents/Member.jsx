@@ -140,22 +140,51 @@ const Member = () => {
                             className='border px-2 py-1 rounded'
                         />
                     </div>
-                    <div className='grid gap-2 grid-cols-8 text-center border-b py-4'>
-                        <p>姓名</p>
-                        <p>電話</p>
-                        <p>e-mail</p>
-                        <p className='col-span-4'>備註</p>
-                        <p>編輯會員</p>
-                    </div>
-                    {currentData && currentData.map((item, i) => (
-                        <div className='grid gap-2 grid-cols-8 text-center border-b py-5' key={i}>
-                            <p>{item.name}</p>
-                            <p>{item.phone}</p>
-                            <p>{item.email}</p>
-                            <p className='col-span-4'>{item.comment}</p>
-                            <button className='bcg text-white rounded' onClick={() => { handleEdit(item._id) }}>編輯會員</button>
+                    <React.Fragment> 
+                    { window.innerWidth > 490 ? 
+                    <>
+                        <div className='grid gap-2 grid-cols-8 text-center border-b py-4'>
+                            <p>姓名</p>
+                            <p>電話</p>
+                            <p>e-mail</p>
+                            <p className='col-span-4'>備註</p>
+                            <p>編輯會員</p>
                         </div>
-                    ))}
+                        {currentData && currentData.map((item, i) => (
+                            <div className='grid gap-2 grid-cols-8 text-center border-b py-5' key={i}>
+                                <p>{item.name}</p>
+                                <p>{item.phone}</p>
+                                <p>{item.email}</p>
+                                <p className='col-span-4'>{item.comment}</p>
+                                <button className='bcg text-white rounded' onClick={() => { handleEdit(item._id) }}>編輯會員</button>
+                            </div>
+                        ))}
+                    </>
+                    :
+                    <>
+                        {currentData && currentData.map((item, i) => (
+                            <div className='p-2 border relative my-2 scroll' key={i}>
+                                <div className='grid grid-cols-4'>
+                                <p className='px-2'>姓名：</p>
+                                <p className='px-2 col-span-3'>{item.name}</p>
+                                <p className='px-2'>電話：</p>
+                                <p className='px-2 col-span-3'>{item.phone}</p>
+                                <p className='px-2'>e-mail：</p>
+                                <p className='px-2 col-span-3'>{item.email}</p>
+                                <p className='px-2'>備註：</p>
+                                <p className='px-2 col-span-3'>{item.comment}</p>
+                                </div>
+                                <div className='w-full flex justify-end'>
+                                <button className='bcg text-white rounded px-2 py-1' onClick={() => { handleEdit(item._id) }}>編輯會員</button>
+                                </div>
+                            </div>
+                        ))}
+                    </>
+                    }
+
+
+                    </React.Fragment>
+                    
                     <div className='fixed bottom-4 right-10'>
                         {Array.from({ length: Math.ceil(filteredData.length / itemsPerPage) }, (_, index) => (
                             <React.Fragment key={index}>
