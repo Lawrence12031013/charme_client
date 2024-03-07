@@ -29,7 +29,7 @@
 
 [[redirects]]
     from = "/order/date/*"
-    to = "https://charme-api-vercel.vercel.app/api/v1/order/date/:splatx"
+    to = "https://charme-api-vercel.vercel.app/api/v1/order/date/:splat"
     status = 200
     force = true
     header = {X-From = "Netlify"}
