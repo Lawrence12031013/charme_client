@@ -1,27 +1,21 @@
 [[redirects]]
-    from = "/auth/login"
-    to = "https://charme-api-vercel.vercel.app/api/v1/auth/login"
+    from = "/auth/admin"
+    to = "https://charme-api-vercel.vercel.app/api/v1/auth/admin"
+    status = 200
+    force = true
+    header = {X-From = "Netlify"}
+
+
+[[redirects]]
+    from = "/order/user"
+    to = "https://charme-api-vercel.vercel.app/api/v1/order/user"
     status = 200
     force = true
     header = {X-From = "Netlify"}
 
 [[redirects]]
-    from = "/auth/register"
-    to = "https://charme-api-vercel.vercel.app/api/v1/auth/login"
-    status = 200
-    force = true
-    header = {X-From = "Netlify"}
-
-[[redirects]]
-    from = "/order/user/*"
-    to = "https://charme-api-vercel.vercel.app/api/v1/order/user/:splat"
-    status = 200
-    force = true
-    header = {X-From = "Netlify"}
-
-[[redirects]]
-    from = "/time/*"
-    to = "https://charme-api-vercel.vercel.app/api/v1/time/:splat"
+    from = "/time"
+    to = "https://charme-api-vercel.vercel.app/api/v1/time"
     status = 200
     force = true
     header = {X-From = "Netlify"}
