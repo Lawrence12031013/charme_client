@@ -8,7 +8,7 @@
 
 [[redirects]]
     from = "/user"
-    to = "https://charme-api-vercel.vercel.app/api/v1/order/user"
+    to = "https://charme-api-vercel.vercel.app/api/v1/user"
     status = 200
     force = true
     header = {X-From = "Netlify"}
@@ -23,6 +23,13 @@
 [[redirects]]
     from = "/order"
     to = "https://charme-api-vercel.vercel.app/api/v1/order"
+    status = 200
+    force = true
+    header = {X-From = "Netlify"}
+
+[[redirects]]
+    from = "/order/date/*"
+    to = "https://charme-api-vercel.vercel.app/api/v1/order/date/:splatx"
     status = 200
     force = true
     header = {X-From = "Netlify"}
