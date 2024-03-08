@@ -187,22 +187,22 @@ const Orders = () => {
                 :
                 <div className='w-full'>
                     {data.map((item, i) => (
-                        <div className='py-2 border relative my-2 scroll' key={i}>
+                        <div className='p-2 border relative my-2 scroll' key={i}>
                           <div className='grid grid-cols-4'>
-                            <p className='px-2'>時間：</p>
-                            <p className='px-2 col-span-3'>{item.reservationTime}</p>
-                            <p className='px-2'>預約人：</p>
-                            <p className='px-2 col-span-3'>{item.name}</p>
-                            <p className='px-2'>電話：</p>
-                            <p className='px-2 col-span-3'>{item.phone}</p>
-                            <p className='px-2 whitespace-nowrap'>預約服務：</p>
-                            <p className='px-2 col-span-3'>{item.service}</p>
-                            <p className='px-2'>回除：</p>
-                            <p className='px-2 col-span-3'>否</p>
-                            <p className='px-2'>價格</p>
-                            <p className='px-2 col-span-3'>1,600</p>
+                            <p>時間：</p>
+                            <p className='col-span-3'>{item.reservationTime}</p>
+                            <p>預約人：</p>
+                            <p className='col-span-3'>{item.name}</p>
+                            <p>電話：</p>
+                            <p className='col-span-3'>{item.phone}</p>
+                            <p className='whitespace-nowrap'>預約服務：</p>
+                            <p className='col-span-3'>{item.service}</p>
+                            <p>回除：</p>
+                            <p className='col-span-3'>否</p>
+                            <p>價格</p>
+                            <p className='col-span-3'>1,600</p>
                           </div>
-                          <div className='w-full flex justify-center'>
+                          <div className='w-full flex justify-end'>
                             <button className='bg-red-700 text-white rounded px-4 py-1 mt-3 mb-1' onClick={() => {handleDelete(item._id, item.reservationDate)}}>刪除訂單</button>
                           </div>
                         </div>
