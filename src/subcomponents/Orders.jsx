@@ -157,8 +157,8 @@ const Orders = () => {
             <hr />
             <div className='flex justify-evenly'>
                 { data == null ? 
-                <div className='flex justify-center items-center h-80 px-4'>
-                    <h1 className='text-xl'>{noteDate}<span className='px-4'>今日沒有訂單</span></h1>
+                <div className='flex flex-wrap text-center justify-center items-center h-80 px-4'>
+                    <h1 className='text-xl'>{noteDate}<span className='px-4 whitespace-nowrap'>今日沒有訂單</span></h1>
                 </div>
                 :
                 <React.Fragment >

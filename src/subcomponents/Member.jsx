@@ -163,7 +163,7 @@ const Member = () => {
                     :
                     <>
                         {currentData && currentData.map((item, i) => (
-                            <div className='p-2 border relative my-2 scroll' key={i}>
+                            <div className='p-2 border relative my-2 scroll overflow-hidden' key={i}>
                                 <div className='grid grid-cols-4'>
                                 <p className='px-2'>姓名：</p>
                                 <p className='px-2 col-span-3'>{item.name}</p>

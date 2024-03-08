@@ -52,6 +52,7 @@
   display: none;
 }
 
+
 @media screen and (max-width:490px) {
   .hideButton {
       width: 25px;
@@ -118,9 +119,20 @@
 
   .background {
     width: 100%;
-    height: 100vh;
-    background-color: #ffe3e37d;
+    height: calc(100vh - 48px);
+    background-color: rgba(229, 201, 196, 0.5);
     position: absolute;
-    filter: blur(4px);
+    border-top: 2px solid #fff;
   }
+
+  .buttonBcg {
+    height: 25px;
+    width: 25px;
+    transform: translate(0%, -50%);
+  }
+
+  .bcgHeight {
+    height: calc(100vh - 48px);
+  }
+  
 }

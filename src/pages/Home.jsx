@@ -25,13 +25,15 @@ const Home = () => {
             </div> 
             :
             <div>
-              <button className='showButton' onClick={() => setHideButton(false)}></button>
+              <button className='showButton' onClick={() => setHideButton(false)}>
+                <div className='buttonBcg'></div>
+              </button>
               <div className='flex'>
                 <div className='w-13 z-10'>
                   <Sidebar />
                 </div>
                   <div className='background'></div>
-                <div className="w-87 p-4">
+                <div className="w-87 p-4 overflow-hidden bcgHeight">
                   <Content />
                 </div>
               </div>
