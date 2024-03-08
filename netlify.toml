@@ -14,6 +14,13 @@
     header = {X-From = "Netlify"}
 
 [[redirects]]
+    from = "/user/*"
+    to = "https://charme-api-vercel.vercel.app/api/v1/user/:splat"
+    status = 200
+    force = true
+    header = {X-From = "Netlify"}
+
+[[redirects]]
     from = "/time"
     to = "https://charme-api-vercel.vercel.app/api/v1/time"
     status = 200
